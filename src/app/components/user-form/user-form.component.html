@@ -1,0 +1,46 @@
+<div *ngIf="selectedUser; else addUser">
+    <h2>Editar Usuario</h2>
+    <form>
+      <label>
+        Nombre Completo:
+        <input type="text" [(ngModel)]="selectedUser.fullName" name="fullName">
+      </label>
+      <label>
+        Usuario:
+        <input type="text" [(ngModel)]="selectedUser.username" name="username">
+      </label>
+      <label>
+        Contraseña:
+        <input type="password" [(ngModel)]="selectedUser.password" name="password">
+      </label>
+      <label>
+        Rol:
+        <input type="text" [(ngModel)]="selectedUser.roleId" name="roleId">
+      </label>
+      <button type="button" (click)="updateUser()">Actualizar Usuario</button>
+      <button type="button" (click)="cancelEdit()">Cancelar</button>
+    </form>
+  </div>
+  
+  <ng-template #addUser>
+    <h2>Agregar Usuario</h2>
+    <form>
+      <label>
+        Nombre Completo:
+        <input type="text" [(ngModel)]="user.fullName" name="fullName">
+      </label>
+      <label>
+        Usuario:
+        <input type="text" [(ngModel)]="user.username" name="username">
+      </label>
+      <label>
+        Contraseña:
+        <input type="password" [(ngModel)]="user.password" name="password">
+      </label>
+      <label>
+        Rol:
+        <input type="text" [(ngModel)]="user.roleId" name="roleId">
+      </label>
+      <button type="button" (click)="createUser()">Agregar Usuario</button>
+    </form>
+  </ng-template>
